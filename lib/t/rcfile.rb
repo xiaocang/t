@@ -64,6 +64,15 @@ module T
       profiles[active_profile[0]][active_profile[1]]['token'] if active_profile?
     end
 
+    def proxy
+        {
+          :host => profiles[active_profile[0]][active_profile[1]]['proxy']['host'],
+          :port => profiles[active_profile[0]][active_profile[1]]['proxy']['port'],
+          :username => nil,
+          :password => nil
+        } if active_profile?
+    end
+
     def delete
       File.delete(@path) if File.exist?(@path)
     end

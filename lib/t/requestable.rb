@@ -12,6 +12,7 @@ module T
         config.consumer_secret     = @rcfile.active_consumer_secret
         config.access_token        = @rcfile.active_token
         config.access_token_secret = @rcfile.active_secret
+        config.proxy               = @rcfile.proxy if @rcfile.proxy
       end
     end
   end
